@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ cov['formula'] }} {% endblock %}</h2>
+    <span class="badge badge-primary">{{ cov['created'] }}</span>
+    <p>{{ cov['tipo'] }}</p>
+{% endblock %}

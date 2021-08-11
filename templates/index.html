@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Bienvenido a App Energia Libre {% endblock %}</h1>
+    {% for cov in covs %}
+        <a href="#">
+            <a href="{{ url_for('cov', cov_id=cov['id']) }}"></a>
+            <h2>{{ cov['formula'] }}</h2>
+            <h2>{{ cov['tipo'] }}</h2>
+        </a>
+        <span class="badge badge-primary">{{ cov['created'] }}</span>
+        <a href="{{ url_for('edit', id=cov['id']) }}">
+          <span class="badge badge-warning">Edit</span>
+        </a>
+        <hr>
+
+    {% endfor %}
+
+{% endblock %}
